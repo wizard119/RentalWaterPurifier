@@ -83,10 +83,12 @@ Cloud App. Eng._AWS_Personal Project
 ### Polyglot Persistent
 ### Polyglot Programming
 ### 동기식 호출과 Fallback 처리
-### 비동기식 호출 / 시간적 디커플링 / 장애격리 / 최종 (Eventual) 일관성 테스트
+### 비동기식 호출 과 Eventual Consistency
 
 ## 운영
 ### CI/CD 설정
 ### 동기식 호출 / 서킷 브레이킹 / 장애격리
-#### AutoScale Out
+### AutoScale Out
 ### 무정지 재배포
+### 개발 운영 환경 분리
+### 모니터링
