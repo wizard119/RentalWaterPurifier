@@ -31,6 +31,7 @@ MSAEz 로 모델링한 이벤트스토밍 결과: http://labs.msaez.io/#/stormin
 
  이벤트 도출
 https://user-images.githubusercontent.com/87048633/129510838-93083903-ff02-40aa-ac7d-2baaa87b8e57.png
+![image](https://user-images.githubusercontent.com/87048633/129510838-93083903-ff02-40aa-ac7d-2baaa87b8e57.png)
 
  부적격 이벤트 탈락
  https://user-images.githubusercontent.com/87048633/129510865-2c6a3cfe-f293-4f2f-99ac-c18b86d7f7cf.png
