@@ -16,7 +16,7 @@ Cloud App. Eng._AWS_Personal Project
     - [AutoScale Out](#AutoScale-Out)
     - [무정지 재배포](#무정지-재배포)
     - [개발 운영 환경 분리](#개발-운영-환경-분리)
-    - [모니터링] (#모니터링)
+    - [모니터링](#모니터링)
 
 ## 서비스 시나리오
     기능적 요구사항
