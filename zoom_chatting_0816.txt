@@ -1,0 +1,68 @@
+내가 모두에게:  06:00 PM
+eksctl create cluster --name RentWaterPurifier --version 1.17 --nodegroup-name standard-workers --node-type t3.medium --nodes 4 --nodes-min 1 --nodes-max 4
+RentWaterPurifier을 바꾸면 되고..
+내가 모두에게:  06:20 PM
+https://github.com/weaveworks/eksctl/releases/
+정영민님이 모두에게:  06:24 PM
+curl -o kubectl.exe https://amazon-eks.s3.us-west-2.amazonaws.com/1.17.12/2020-11-02/bin/windows/amd64/kubectl.exe
+바이너리를 PATH의 폴더에 복사합니다. PATH에 명령줄 유틸리티에 사용하는 기존 디렉터리가 있으면 해당 디렉터리로 이진 파일을 복사하십시오. 그렇지 않은 경우 다음 단계를 완료합니다.
+
+C:\bin과 같이, 명령줄 이진 파일용 새 디렉터리를 생성합니다.
+
+kubectl.exe 이진 파일을 새 디렉터리로 복사합니다.
+
+사용자 또는 시스템 PATH 환경 변수를 편집하여 PATH에 새 디렉터리를 추가합니다.
+
+PowerShell 터미널을 닫고 새 PATH 변수를 가져오기 위해 새 터미널을 엽니다.
+정영민님이 모두에게:  06:33 PM
+eks-admin-service-account.yaml
+eks-admin-cluster-role-binding.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: eks-admin
+  namespace: kube-system
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRoleBinding
+metadata:
+  name: eks-admin
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: eks-admin
+  namespace: kube-system
+http://34.117.35.195/operation/deployment/deployment-four/
+내가 모두에게:  06:35 PM
+ii.kubectl apply -f eks-admin-service-account.yaml
+kubectl apply -f eks-admin-service-account.yaml
+정영민님이 모두에게:  06:38 PM
+kubectl apply -f eks-admin-service-account.yaml
+kubectl apply -f eks-admin-cluster-role-binding.yaml
+이게 교재 47페이지 내용 대체하는 부분
+정영민님이 모두에게:  06:55 PM
+kubectl -n kube-system describe secret eks-admin
+buildspec-kubectl.yml
+깃허브에 이 파일의 내용을 복사
+buildspec.yml
+덮어 쓰기
+정영민님이 모두에게:  07:02 PM
+aws eks --region (Region-Code) update-kubeconfig --name (Cluster-Name)
+정영민님이 모두에게:  07:21 PM
+docker login --username AWS -p $(aws ecr get-login-password --region (Region-Code)) (Account-Id).dkr.ecr.(Region-Code).amazonaws.com/
+이명숙님이 모두에게:  07:32 PM
+https://ohgym.tistory.com/76
+한지연님이 모두에게:  07:36 PM
+AdministratorAccess
+이명숙님이 모두에게:  07:40 PM
+COMMAND_EXECUTION_ERROR: Error while executing command: docker build -t $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$_PROJECT_NAME:$CODEBUILD_RESOLVED_SOURCE_VERSION .. Reason: exit status 125
+한지연님이 모두에게:  07:45 PM
+kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep eks-admin | awk '{print $1}')
+내가 모두에게:  07:51 PM
+https://github.com/Sky-blue-simon/gift
+정영민님이 모두에게:  08:05 PM
+kubectl create deploy course --image=052937454741.dkr.ecr.ap-northeast-2.amazonaws.com/lecture-course:latest
+정영민님이 모두에게:  08:12 PM
+--type=ClusterIP --port=8080
