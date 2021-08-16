@@ -1,0 +1,61 @@
+[EKS]
+1. AWS configure세팅(Access Key 등록하기) : AWS 관련 정보 연결 - Local이랑 AWS 연결
+   aws configure 
+   AWS>IAM 로 이동해서 사용자 추가'를 해서 사용자를 생성한 후 Access Key를 만든다.
+   - Access Key ID 
+   - Secret access key
+   - region name
+   - output format : json
+   >> 참조 사이트 : https://krksap.tistory.com/1829
+   
+2. curl 설치
+   https://curl.se/download.html
+   Packages에서 아래 파일 다운로드
+     Package	Version	Type	Provider
+     Windows  64 bit	7.78.0	binary	the curl project
+   설치 확인(버전 확인) : curl -V   
+   
+3. eksctl 설치
+   >> 설치 참조 : https://www.edureka.co/community/74468/how-to-install-eksctl-command-in-windows
+   https://github.com/weaveworks/eksctl/releases/에서 Release 0.61.0>eksctl_Windows_amd64.zip 다운로드 받아 설치
+
+4. cubectl 설치
+   https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
+   kubectl 1.17.12 설치
+     curl -o kubectl.exe https://amazon-eks.s3.us-west-2.amazonaws.com/1.17.12/2020-11-02/bin/windows/amd64/kubectl.exe
+   
+5. ESK-Cluster 생성 : eksctl 활용 (시간이 좀 걸림)
+   eksctl create cluster --name covid-hanjy81 --version 1.17 --nodegroup-name standard-workers --node-type t3.medium --nodes 4 --nodes-min 1 --nodes-max 4
+
+   
+5. CodeBuild 와 EKS 연결 : Local이랑 EKS 연결 >> http://34.117.35.195/operation/deployment/deployment-four/
+eks-admin-service-account.yaml 파일 생성yaml 수정 
+   - eks-admin-service-account.yaml 파일 생성하여 sa 생성 > kubectl apply -f eks-admin-service-account.yaml (적용)
+      apiVersion: v1
+      kind: ServiceAccount
+      metadata:
+        name: eks-admin
+        namespace: kube-system
+   - eks-admin-cluster-role-binding.yaml 파일 생성하여 롤바인딩 > kubectl apply -f eks-admin-cluster-role-binding.yaml (적용)
+      apiVersion: rbac.authorization.k8s.io/v1beta1
+      kind: ClusterRoleBinding
+      metadata:
+        name: eks-admin
+      roleRef:
+        apiGroup: rbac.authorization.k8s.io
+        kind: ClusterRole
+        name: cluster-admin
+      subjects:
+      - kind: ServiceAccount
+        name: eks-admin
+        namespace: kube-system
+        
+        
+6. Local이랑 ESK 
+   aws eks --region (Region-Code) update-kubeconfig --name (Cluster-Name)
+
+7. CodeBuild 환경 변수 설정
+   - KUBE_URL : EKS>클러스터>구성>세부정보>API서버 엔드포이트 참조
+   - KUBE_TOKEN : 토큰 가져오기 kubectl -n kube-system describe secret eks-admin
+   - AWS_ACCOUNT_ID
+
