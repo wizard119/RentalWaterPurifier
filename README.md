@@ -78,7 +78,9 @@ Cloud App. Eng._AWS_Personal Project
 #### 11.비기능적 요구사항에 대한 검증
  ![image](https://user-images.githubusercontent.com/87048633/129510971-3eb107a0-8fc7-4d8e-92ea-028c79b7d1c8.png)
  
- 
+#### 12.헥사고날 아키텍처 다이어그램 도출
+ ![image](https://user-images.githubusercontent.com/87048633/129513867-8df97e8b-e44f-4e00-81ce-84d0f5f9d7cb.png)
+
  
 ## 구현
 ### DDD의 적용
