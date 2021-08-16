@@ -6,15 +6,17 @@ Cloud App. Eng._AWS_Personal Project
   - [분석/설계](#분석설계)
   - [구현](#구현)
     - [DDD의 적용](#ddd-의-적용)
-    - [폴리글랏 퍼시스턴스](#폴리글랏-퍼시스턴스)
-    - [폴리글랏 프로그래밍](#폴리글랏-프로그래밍)
+    - [Polyglot Persistent](#Polyglot-Persistent)
+    - [Polyglot Programming](#Polyglot-Programming)
     - [동기식 호출 과 Fallback 처리](#동기식-호출-과-Fallback-처리)
-    - [비동기식 호출 과 Eventual Consistency](#비동기식-호출-과-Eventual-Consistency)
+    - [비동기식 호출과 Eventual Consistency](#비동기식-호출과-Eventual-Consistency)
   - [운영](#운영)
-    - [CI/CD 설정](#cicd설정)
-    - [동기식 호출 / 서킷 브레이킹 / 장애격리](#동기식-호출-서킷-브레이킹-장애격리)
-    - [오토스케일 아웃](#오토스케일-아웃)
+    - [CI/CD 설정](#CI/CD-설정)
+    - [동기식 호출/서킷 브레이킹/장애격리](#동기식-호출/서킷-브레이킹/장애격리)
+    - [AutoScale Out](#AutoScale-Out)
     - [무정지 재배포](#무정지-재배포)
+    - [개발 운영 환경 분리](#개발-운영-환경-분리)
+    - [모니터링] (#모니터링)
 
 ## 서비스 시나리오
     기능적 요구사항
@@ -43,37 +45,37 @@ Cloud App. Eng._AWS_Personal Project
 ### Event Storming 결과
     MSAEz 로 모델링한 이벤트스토밍 결과: http://labs.msaez.io/#/storming/fMnS97KBhKdTR73T20ep9sUs6kE2/69c4cd8c92b1f6f3b5d35ea823ab4921
 
-#### 이벤트 도출
+#### 1.이벤트 도출
  ![image](https://user-images.githubusercontent.com/87048633/129510838-93083903-ff02-40aa-ac7d-2baaa87b8e57.png)
 
-#### 부적격 이벤트 탈락
+#### 2.부적격 이벤트 탈락
  ![image](https://user-images.githubusercontent.com/87048633/129510865-2c6a3cfe-f293-4f2f-99ac-c18b86d7f7cf.png)
  
-#### Actor, Command 부착하여 읽기 좋게
+#### 3.Actor, Command 부착하여 읽기 좋게
  ![image](https://user-images.githubusercontent.com/87048633/129510881-88f8567f-dc12-4671-87c1-644e2308630f.png)
  
-#### Aggregate으로 묶기
+#### 4.Aggregate으로 묶기
  ![image](https://user-images.githubusercontent.com/87048633/129510894-2935b76f-b7f0-4289-99e0-7d8c847e72a1.png)
  
-#### Bounded Context로 묶기
+#### 5.Bounded Context로 묶기
  ![image](https://user-images.githubusercontent.com/87048633/129510902-38b255f4-ed81-4de3-a96c-f45dd553bfcc.png)
 
-#### Policy 부착
+#### 6.Policy 부착
  ![image](https://user-images.githubusercontent.com/87048633/129510915-15e35f37-1535-46f9-b74f-41f990cd9695.png)
 
-#### Policy의 이동과 Context 매핑
+#### 7.Policy의 이동과 Context 매핑
  ![image](https://user-images.githubusercontent.com/87048633/129510929-3ec576d0-5941-4a31-be75-c1bad607a2b7.png)
  
-#### 완성된 1차 모형
+#### 8.완성된 1차 모형
  ![image](https://user-images.githubusercontent.com/87048633/129510939-ba685a74-0be2-4143-aa9e-c704ab1f0fe9.png)
  
-#### 1차 완성본에 대한 기능적/비기능적 요구사항을 커버하는지 검증
+#### 9.1차 완성본에 대한 기능적/비기능적 요구사항을 커버하는지 검증
  ![image](https://user-images.githubusercontent.com/87048633/129510952-f71928e9-9c33-4d05-8c68-ab3b8af7752f.png)
 
-#### 모델수정
+#### 10.모델수정
  ![image](https://user-images.githubusercontent.com/87048633/129510961-92b5eb54-dea4-4c75-a2d8-67946700b63a.png)
 
-#### 비기능적 요구사항에 대한 검증
+#### 11.비기능적 요구사항에 대한 검증
  ![image](https://user-images.githubusercontent.com/87048633/129510971-3eb107a0-8fc7-4d8e-92ea-028c79b7d1c8.png)
  
  
@@ -83,11 +85,13 @@ Cloud App. Eng._AWS_Personal Project
 ### Polyglot Persistent
 ### Polyglot Programming
 ### 동기식 호출과 Fallback 처리
-### 비동기식 호출 과 Eventual Consistency
+### 비동기식 호출과 Eventual Consistency
+
+
 
 ## 운영
 ### CI/CD 설정
-### 동기식 호출 / 서킷 브레이킹 / 장애격리
+### 동기식 호출/서킷 브레이킹/장애격리
 ### AutoScale Out
 ### 무정지 재배포
 ### 개발 운영 환경 분리
