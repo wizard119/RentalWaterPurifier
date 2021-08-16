@@ -30,11 +30,37 @@ Event Storming 결과
 MSAEz 로 모델링한 이벤트스토밍 결과: http://labs.msaez.io/#/storming/fMnS97KBhKdTR73T20ep9sUs6kE2/69c4cd8c92b1f6f3b5d35ea823ab4921
 
  이벤트 도출
-https://user-images.githubusercontent.com/87048633/129510838-93083903-ff02-40aa-ac7d-2baaa87b8e57.png
-![image](https://user-images.githubusercontent.com/87048633/129510838-93083903-ff02-40aa-ac7d-2baaa87b8e57.png)
+ ![image](https://user-images.githubusercontent.com/87048633/129510838-93083903-ff02-40aa-ac7d-2baaa87b8e57.png)
 
  부적격 이벤트 탈락
- https://user-images.githubusercontent.com/87048633/129510865-2c6a3cfe-f293-4f2f-99ac-c18b86d7f7cf.png
+ ![image](https://user-images.githubusercontent.com/87048633/129510865-2c6a3cfe-f293-4f2f-99ac-c18b86d7f7cf.png)
  
- 액터,커맨드 부착하여 읽기 좋게
- https://user-images.githubusercontent.com/87048633/129510881-88f8567f-dc12-4671-87c1-644e2308630f.png
+ Actor, Command 부착하여 읽기 좋게
+ ![image](https://user-images.githubusercontent.com/87048633/129510881-88f8567f-dc12-4671-87c1-644e2308630f.png)
+ 
+Aggregate으로 묶기
+ ![image](https://user-images.githubusercontent.com/87048633/129510894-2935b76f-b7f0-4289-99e0-7d8c847e72a1.png)
+ 
+Bounded Context로 묶기
+ ![image](https://user-images.githubusercontent.com/87048633/129510902-38b255f4-ed81-4de3-a96c-f45dd553bfcc.png)
+
+Policy 부착
+ ![image](https://user-images.githubusercontent.com/87048633/129510915-15e35f37-1535-46f9-b74f-41f990cd9695.png)
+
+Policy의 이동과 Context 매핑
+ ![image](https://user-images.githubusercontent.com/87048633/129510929-3ec576d0-5941-4a31-be75-c1bad607a2b7.png)
+ 
+완성된 1차 모형
+ ![image](https://user-images.githubusercontent.com/87048633/129510939-ba685a74-0be2-4143-aa9e-c704ab1f0fe9.png)
+ 
+1차 완성본에 대한 기능적/비기능적 요구사항을 커버하는지 검증
+ ![image](https://user-images.githubusercontent.com/87048633/129510952-f71928e9-9c33-4d05-8c68-ab3b8af7752f.png)
+
+모델수정
+ ![image](https://user-images.githubusercontent.com/87048633/129510961-92b5eb54-dea4-4c75-a2d8-67946700b63a.png)
+
+비기능적 요구사항에 대한 검증
+ ![image](https://user-images.githubusercontent.com/87048633/129510971-3eb107a0-8fc7-4d8e-92ea-028c79b7d1c8.png)
+ 
+ 
+
